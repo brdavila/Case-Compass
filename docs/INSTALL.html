@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install Case Compass</title>
+<style>
+:root { --bg:#0a0d11; --surface:#141a21; --border:#2c3744; --text:#f4f7fa; --muted:#b4bfca; --accent:#3cc8f5; --warn:#f5c04a; }
+@media (prefers-color-scheme: light) { :root { --bg:#f3f5f8; --surface:#fff; --border:#d3dae2; --text:#0e1620; --muted:#3d4a57; --accent:#0a78b0; --warn:#9a6a00; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+main { max-width: 780px; margin: 0 auto; padding: 24px 16px 64px; }
+h1 { font-size: 1.8rem; margin: 0 0 4px; } h2 { margin-top: 32px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin: 14px 0; }
+.warn { border-color: var(--warn); }
+code { background: rgba(127,127,127,.18); padding: 1px 6px; border-radius: 6px; font-size: .92em; overflow-wrap: anywhere; }
+a { color: var(--accent); } .muted { color: var(--muted); }
+ol li, ul li { margin: 4px 0; }
+</style>
+</head>
+<body>
+<main>
+<h1>Install Case Compass</h1>
+<p class="muted">Version 3.0 · iPhone, iPad, Android, Mac, Windows, and Chromebook</p>
+
+<div class="card">
+<b>Why an address is needed.</b> Case Compass encrypts your records inside your browser. Browsers allow encryption, private storage, and offline use only on a secure (HTTPS) address or on your own computer at <code>http://localhost</code>. Opening <code>index.html</code> directly from a folder will show an explanation instead of the app.
+</div>
+
+<h2>1. Put the app on an HTTPS address (one time)</h2>
+<p>Case Compass is a set of static files. It has no server, accounts, or database to set up, and it never sends your records anywhere. Any static HTTPS host works. The simplest free option is GitHub Pages:</p>
+<ol>
+<li>In the GitHub repository, open <b>Settings › Pages</b>.</li>
+<li>Under <b>Build and deployment</b>, choose <b>Deploy from a branch</b>, select the <code>main</code> branch and the <code>/ (root)</code> folder, then <b>Save</b>.</li>
+<li>After a minute or two, GitHub shows the address, for example <code>https://YOUR-USERNAME.github.io/Case-Compass/</code>.</li>
+</ol>
+<p class="muted">The app's code is public on a public repository, but your records are not: they are created and encrypted on your own device and are never uploaded to GitHub or anywhere else.</p>
+
+<h2>2. iPhone or iPad</h2>
+<ol>
+<li>Open the HTTPS address in <b>Safari</b>.</li>
+<li>Tap the <b>Share</b> button, then <b>Add to Home Screen</b>, then <b>Add</b>.</li>
+<li>Open <b>Case Compass from the Home Screen icon</b> and create your vault there.</li>
+</ol>
+<div class="card warn">
+<b>Important on iPhone and iPad.</b>
+<ul>
+<li>The Home Screen app and a Safari tab keep <b>separate storage</b>. Create and use your vault in the Home Screen app.</li>
+<li>When a site is used only in a Safari tab, Safari may delete its stored data after about seven days without a visit. Home Screen apps are not subject to that limit. This is another reason to install to the Home Screen and to keep encrypted backups.</li>
+<li>Deleting the Home Screen icon deletes the vault stored inside it. Make a backup first.</li>
+</ul>
+</div>
+<p><b>Saving files on iPhone:</b> when you create a report or backup, choose <b>Share…</b> and then <b>Save to Files</b> to keep it in the Files app (iCloud Drive or On My iPhone), or choose <b>Download</b> and find it in Files › Downloads.</p>
+
+<h2>3. Android</h2>
+<ol>
+<li>Open the HTTPS address in <b>Chrome</b>.</li>
+<li>Tap the <b>⋮</b> menu, then <b>Install app</b> (or <b>Add to Home screen</b>).</li>
+<li>Open Case Compass from the new icon and create your vault.</li>
+</ol>
+
+<h2>4. Computer (Mac, Windows, Chromebook)</h2>
+<p><b>Hosted address:</b> open it in Chrome, Edge, Safari, or Firefox. In Chrome or Edge you can choose the install icon in the address bar to get a separate app window.</p>
+<p><b>Run it locally instead:</b> if Python is installed, open a terminal in the Case Compass folder and run:</p>
+<p><code>python3 -m http.server 8080</code></p>
+<p>then visit <code>http://localhost:8080</code>. Keep the terminal open while you use it. Your vault belongs to that browser and that address; use the same address each time.</p>
+
+<h2>5. First use</h2>
+<ol>
+<li>Create a passphrase of at least 12 characters (four or more random words work well). Write it down and keep it somewhere safe. <b>It cannot be recovered.</b></li>
+<li>Read the short orientation on the Home screen.</li>
+<li>Make your first encrypted backup in <b>Reports › Backup &amp; Restore</b> and store it somewhere other than this device.</li>
+</ol>
+
+<h2>6. Updates and offline use</h2>
+<p>After the first visit, the app's files are stored on the device so it opens and works without an internet connection. Links to outside websites still need the internet. When you are online, Case Compass checks for a newer version and offers <b>Update now</b>; you can also use <b>Reports › Settings › Check for app update</b>.</p>
+
+<h2>7. Moving to a new device</h2>
+<p>Case Compass does not sync between devices. To move: make an encrypted backup on the old device, copy the <code>.ccbackup</code> file to the new device, open Case Compass there, and choose <b>Restore from an encrypted backup</b> on the welcome screen.</p>
+
+<h2>8. Troubleshooting</h2>
+<ul>
+<li><b>“Open Case Compass from a web address”</b> – the file was opened directly. Use the HTTPS address or <code>http://localhost</code>.</li>
+<li><b>“Secure storage is not available” or “Storage is blocked”</b> – usually private browsing or a privacy setting that blocks site data. Use a normal window. Case Compass never falls back to storing records without encryption.</li>
+<li><b>“Storage is full”</b> – make a backup, then remove large evidence files you no longer need, or allow more storage in the browser.</li>
+<li><b>Forgot passphrase</b> – it cannot be recovered. If you have a backup and remember its passphrase, erase the vault from the lock screen and restore the backup.</li>
+</ul>
+<p class="muted">Case Compass is an organizational and educational tool, not legal advice. In an emergency, call 911.</p>
+<p><a href="../index.html">Open Case Compass</a></p>
+</main>
+</body>
+</html>
