@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case Compass User Manual</title>
+<style>
+@page { size: letter; margin: 0.7in 0.75in 0.8in; }
+* { box-sizing: border-box; }
+body { font: 10.8pt/1.5 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; color: #18212b; margin: 0; background: #fff; }
+main { max-width: 7in; margin: 0 auto; padding: 0.4in 0; }
+h1 { font-size: 26pt; color: #10324a; margin: 0; }
+h2 { font-size: 16pt; color: #10324a; border-bottom: 2px solid #1b5f8c; padding-bottom: 3pt; margin: 26pt 0 8pt; break-after: avoid; }
+h3 { font-size: 12pt; color: #1b5f8c; margin: 16pt 0 4pt; break-after: avoid; }
+p, li { orphans: 3; widows: 3; }
+.cover { text-align: center; padding: 1.2in 0 0.6in; break-after: page; }
+.cover img { width: 92px; }
+.cover .sub { font-size: 13pt; color: #44515e; margin-top: 8pt; }
+.cover .tag { margin-top: 26pt; font-size: 11.5pt; }
+.note { background: #eef3f7; border-left: 4px solid #1b5f8c; padding: 8pt 11pt; margin: 10pt 0; break-inside: avoid; }
+.warn { background: #fff7e6; border-left: 4px solid #c58a00; padding: 8pt 11pt; margin: 10pt 0; break-inside: avoid; }
+figure { margin: 10pt 0 14pt; break-inside: avoid; text-align: center; }
+figure img { max-width: 100%; border: 1px solid #c9d2db; border-radius: 8px; }
+figure.phone img { max-height: 5.2in; }
+figure.pair { display: flex; gap: 12pt; justify-content: center; }
+figure.pair div { flex: 1; } figure.pair img { max-height: 4.6in; }
+figcaption { font-size: 9pt; color: #55606b; margin-top: 4pt; }
+table { width: 100%; border-collapse: collapse; margin: 8pt 0; font-size: 9.8pt; break-inside: avoid; }
+th { background: #1b5f8c; color: #fff; text-align: left; padding: 4pt 6pt; }
+td { border-bottom: 1px solid #d3dae2; padding: 4pt 6pt; vertical-align: top; }
+.toc { columns: 2; font-size: 10.5pt; } .toc li { margin: 2pt 0; }
+code { background: #eef1f4; padding: 0 4pt; border-radius: 4px; }
+.pb { break-after: page; }
+</style>
+</head>
+<body>
+<main>
+<section class="cover">
+<img src="../icons/icon-512.png" alt="">
+<h1>Case Compass</h1>
+<p class="sub">User Manual · Version 3.0 · November 2026</p>
+<p class="tag">Document facts. Preserve evidence. Protect safety. Organize next steps.</p>
+<p style="margin-top:40pt;color:#55606b;font-size:9.5pt">A privacy-first case management tool for documenting events, organizing evidence, tracking timelines, preparing reports, and finding legal and personal safety resources in Colorado and Pueblo County.<br><br>Screenshots in this manual show clearly labeled <b>fictional sample data</b>. A new installation starts empty.</p>
+</section>
+
+<h2>Contents</h2>
+<ol class="toc">
+<li>What Case Compass is (and is not)</li><li>Installing</li><li>Your private vault and passphrase</li><li>Locking, Quick Exit, and privacy limits</li>
+<li>The Home screen</li><li>Documenting events</li><li>Evidence</li><li>Timeline and search</li><li>Parenting</li><li>Calendar, tasks, and deadlines</li>
+<li>Attorney Workspace</li><li>Resources</li><li>Protection &amp; Security</li><li>Court forms</li><li>Reports and exports</li><li>Backup, restore, and new devices</li>
+<li>Importing earlier records</li><li>Settings and data tools</li><li>Troubleshooting</li><li>Legal notice</li>
+</ol>
+
+<h2>1. What Case Compass is (and is not)</h2>
+<p>Case Compass is one dependable place to keep accurate records of a complicated family situation over months or years. It helps you:</p>
+<ul>
+<li>write down events, communications, and parenting time accurately and consistently;</li>
+<li>keep evidence with a record of where it came from, without changing the originals;</li>
+<li>track appointments, court dates, and deadlines that come from official papers;</li>
+<li>prepare organized reports for yourself or an attorney;</li>
+<li>find verified Colorado and Pueblo County legal, safety, family, and technical resources; and</li>
+<li>work through practical safety and security checklists.</li>
+</ul>
+<div class="note"><b>What it is not.</b> Case Compass is an organizational and educational tool. It does not give legal advice, cannot predict or guarantee any court outcome (including equal parenting time), and is not a substitute for an attorney. Reports it creates are your own summaries; they are not court filings and are not automatically admissible as evidence.</div>
+
+<h2>2. Installing</h2>
+<p>Case Compass runs in your web browser and works offline after the first visit. It must be opened from a secure web address (HTTPS) or from <code>http://localhost</code> on your own computer. Full steps are in <b>INSTALL.html</b>, included with the app.</p>
+<h3>iPhone or iPad</h3>
+<ol><li>Open the Case Compass address in Safari.</li><li>Tap Share › Add to Home Screen › Add.</li><li>Open Case Compass from the new Home Screen icon and create your vault there.</li></ol>
+<div class="warn">On iPhone and iPad, the Home Screen app and Safari tabs keep separate storage, and Safari may clear data for sites that are only used in a tab after about a week without a visit. Use the Home Screen app, and keep encrypted backups.</div>
+<h3>Computer</h3>
+<p>Open the address in Chrome, Edge, Safari, or Firefox (Chrome and Edge can install it as an app window). To run it yourself, open a terminal in the Case Compass folder, run <code>python3 -m http.server 8080</code>, and visit <code>http://localhost:8080</code>.</p>
+
+<h2>3. Your private vault and passphrase</h2>
+<figure class="pair"><div><img src="screenshots/m01-welcome.png" alt="Welcome screen"><figcaption>Creating the vault</figcaption></div><div><img src="screenshots/m12-locked.png" alt="Lock screen"><figcaption>The lock screen</figcaption></div></figure>
+<p>The first time you open Case Compass, you create a <b>vault</b>: the encrypted storage for everything you record. Choose a passphrase of at least 12 characters. Four or more unrelated words (for example, “river lantern quiet maple 47”) are strong and easy to remember. Do not reuse a password from another account.</p>
+<div class="warn"><b>Your passphrase cannot be recovered.</b> Case Compass has no account, server, or reset link; that is what keeps your records private. Write the passphrase down and keep it somewhere safe. If it is lost, the only way back is restoring an encrypted backup whose passphrase you remember.</div>
+<p>Everything is encrypted on your device with AES-256-GCM using a key derived from your passphrase (PBKDF2-SHA-256 with 600,000 iterations). Nothing is uploaded. There are no analytics or trackers.</p>
+<p>If you type the wrong passphrase, the vault stays locked and tells you. Check Caps Lock and the keyboard language.</p>
+
+<h2>4. Locking, Quick Exit, and privacy limits</h2>
+<ul>
+<li><b>Automatic lock:</b> the vault locks after a period of inactivity (5 minutes by default; change it in Settings). You can also lock when the app is hidden.</li>
+<li><b>Lock now:</b> the padlock button at the top.</li>
+<li><b>Quick Exit:</b> the Exit button at the top (or Esc three times on a keyboard) locks the vault and replaces the page with a neutral website.</li>
+</ul>
+<div class="note"><b>Know the limits.</b> If you may be using a monitored phone or computer: monitoring software can see what is on screen while the vault is unlocked; downloaded reports and unencrypted exports are files anyone with access can open; account changes can send notifications to other people; and Quick Exit cannot erase browser history, downloads, or monitoring software. Use a trusted device when you can. The guide “Using Case Compass on a Possibly Monitored Device” explains more.</div>
+
+<h2>5. The Home screen</h2>
+<figure class="phone"><img src="screenshots/d01-home.png" alt="Home dashboard"><figcaption>Home on a computer, with the sidebar. On phones the same five sections appear in a bar at the bottom.</figcaption></figure>
+<p>Home answers four questions:</p>
+<ul>
+<li><b>What should I do today?</b> One-tap buttons: Record an Incident, Log Communication, Record Parenting Time, Add Evidence, plus shortcuts to checklists, court forms, and reports.</li>
+<li><b>What needs attention?</b> Overdue tasks, backup reminders, evidence not yet in a verified backup, open follow-ups, and the next 30 days of appointments and deadlines.</li>
+<li><b>What have I documented?</b> Counts, a 30-day parenting-time summary, security checklist progress, backup status, and recently saved records.</li>
+<li><b>Where do I find help?</b> Emergency numbers, legal help, and the Protection Center.</li>
+</ul>
+<p>The five sections are <b>Home</b>, <b>Document</b>, <b>Parenting</b>, <b>Resources</b>, and <b>Reports</b>. Tabs under each title move between related pages. The Case Compass logo always returns you to Home, and the back arrow returns to the previous page.</p>
+
+<h2>6. Documenting events</h2>
+<figure class="pair"><div><img src="screenshots/m03-new-incident.png" alt="New incident form"><figcaption>A new incident</figcaption></div><div><img src="screenshots/m05-record-detail.png" alt="Record detail"><figcaption>A saved record</figcaption></div></figure>
+<p>Choose <b>New record</b> (or a Home button) and pick a type. Required fields are marked with a red asterisk. Each saved record gets a stable ID such as <b>INC-0001</b> that appears in every report.</p>
+<table>
+<tr><th>Record type</th><th>Use it for</th></tr>
+<tr><td>Incident</td><td>What happened, what you personally observed, who was present, exact statements (only if you remember them), evidence, police involvement, and what happened afterward.</td></tr>
+<tr><td>Communication</td><td>Calls, texts, Messenger, email, and in-person conversations, including parenting-time requests and unanswered messages.</td></tr>
+<tr><td>Parenting-time entry</td><td>Scheduled, requested, and completed time; overnights; exchanges; cancellations; denied requests; school, medical, and activity involvement.</td></tr>
+<tr><td>Child / Child statement</td><td>One profile per child. Statements are only for things a child said on their own, in their exact words.</td></tr>
+<tr><td>Police / official contact</td><td>Agency, officer, case and report numbers exactly as given, records requests, and follow-ups.</td></tr>
+<tr><td>Residence / property</td><td>Access, keys, belongings, notices, and lease or ownership information.</td></tr>
+<tr><td>Evidence</td><td>Photos, screenshots, PDFs, audio, video, documents, or a reference to an original stored elsewhere.</td></tr>
+<tr><td>Expense</td><td>Child-related expenses, support payments, and case costs.</td></tr>
+<tr><td>Task / Attorney</td><td>Appointments, deadlines, and consultations (see sections 10 and 11).</td></tr>
+</table>
+<h3>Writing factual records</h3>
+<ul><li>Write soon after the event, with specific dates, times, and places.</li><li>Mark whether you saw it yourself or were told about it.</li><li>Quote exact words only when you are sure of them.</li><li>Describe actions, not conclusions or labels about anyone. Do not assume any allegation is true because it was made.</li></ul>
+<p>Every record shows both the <b>event date</b> and the date it was <b>entered</b>. If you write about something days later, that is fine; the record says so openly. Never backdate.</p>
+<h3>Editing keeps history</h3>
+<p>Editing a record saves a new version. Earlier versions are kept and can be viewed under <b>History › Show version history</b>. An encrypted change log (Settings › Change history) lists every creation, edit, export, import, and backup.</p>
+<h3>Drafts and accidental navigation</h3>
+<p>While you type, Case Compass saves an encrypted draft every second. If the browser closes or the phone restarts, open the same form again and choose <b>Restore draft</b>. If you try to leave a form with unsaved text, the app asks first. Attached files are not kept in drafts.</p>
+<h3>Linking records</h3>
+<p>Use <b>Link</b> on any record to connect related incidents, messages, evidence, and tasks. Links appear on both records. One evidence item can be linked to many records without storing the file twice.</p>
+<div class="warn"><b>Residence records:</b> get legal advice before changing locks, excluding anyone, restricting entry, or taking eviction-related action. Occupancy rights, leases, ownership, and court orders affect what is lawful.</div>
+
+<h2>7. Evidence</h2>
+<figure class="phone"><img src="screenshots/d03-evidence.png" alt="Evidence item"><figcaption>An evidence item with preview, download, and integrity check (fictional sample)</figcaption></figure>
+<p>When you add a file, Case Compass stores the exact original, encrypted, and records its <b>SHA-256 fingerprint</b>. If the file were ever changed, the fingerprint would no longer match; use <b>Verify integrity</b> to check. Previews never change the original. <b>Download original</b> gives you the identical file.</p>
+<ul>
+<li>Record the original source, the device or account, and the date it was created or received.</li>
+<li>Note where the original lives if it is outside the app, and each time it is copied or handed to someone.</li>
+<li>Cropped, annotated, or compressed versions should be added as separate evidence items with “Modified copy of” pointing to the original.</li>
+<li>Commentary is stored separately from the file.</li>
+</ul>
+<p>On iPhone, “Add photos or files” offers your Photo Library, the camera, and the Files app.</p>
+
+<h2>8. Timeline and search</h2>
+<figure class="phone"><img src="screenshots/d02-timeline.png" alt="Timeline"><figcaption>The unified timeline, grouped by month</figcaption></figure>
+<p><b>Document › Timeline</b> shows every record in one chronological list, newest first. Filter by date range, record type, child, person, keyword, evidence status (including “not in a verified backup”), open or resolved, parenting-time event, and police contact. Tap any entry to open the full record. Badges show open items, attachments, and entries written later than the event.</p>
+
+<h2>9. Parenting</h2>
+<figure class="phone"><img src="screenshots/m06-parenting.png" alt="Parenting overview"><figcaption>Parenting overview: requested vs. scheduled vs. completed</figcaption></figure>
+<p>The Parenting overview compares requested, scheduled, and completed parenting time for any date range and for each child, with overnights, denied or disputed requests, cancellations by each parent, and requests that received no response. Both successful and unsuccessful parenting time are shown.</p>
+<p>Equal parenting time can be your stated goal. Colorado courts decide parenting time based on the children's best interests (C.R.S. § 14-10-124). The Parenting-Time Preparation Checklist in Resources › Guides lists practical steps.</p>
+<div class="warn"><b>Children:</b> record only statements a child makes on their own. Never coach a child, question them repeatedly, or ask them to carry messages, take photos, or gather information. If you are worried about a child's safety, call 911 or the Colorado Child Abuse and Neglect Hotline, 1-844-CO-4-KIDS (1-844-264-5437).</div>
+
+<h2>10. Calendar, tasks, and deadlines</h2>
+<figure class="phone"><img src="screenshots/d04-calendar.png" alt="Calendar"><figcaption>Calendar &amp; Tasks</figcaption></figure>
+<p>Add appointments, attorney consultations, filing deadlines, hearings, parenting classes, therapy appointments, document requests, police follow-ups, and security tasks. Each has a priority, date, status, completion date, and links to related records.</p>
+<ul>
+<li><b>Court dates and filing deadlines require a source</b> (for example, “Notice of hearing dated Oct 3, 2026”). Case Compass never calculates legal deadlines.</li>
+<li><b>Reminders:</b> Case Compass shows what is due when it is open, but it cannot notify you while closed. Use <b>Add to device calendar</b> to create a calendar file (.ics) for your phone's calendar, which does send alerts. You can choose generic titles so your calendar does not reveal details.</li>
+</ul>
+
+<h2>11. Attorney Workspace</h2>
+<p>Record each attorney or consultation: name, firm, contact details, date, fees, questions to ask, documents requested, the advice as you understood it, follow-ups, and representation status. <b>Create packet</b> builds an Attorney Preparation Packet with your questions, key dates, a timeline summary, the parenting-time comparison, police contacts, and an evidence index. Private notes, earlier attorneys' advice, and detailed child information are left out unless you choose to include them.</p>
+
+<h2>12. Resources</h2>
+<figure class="phone"><img src="screenshots/m07-resources.png" alt="Resources directory"><figcaption>The resource directory (works without unlocking)</figcaption></figure>
+<p>The directory lists verified resources in nine sections: Colorado Courts &amp; Legal Help; Parenting Education; Family &amp; Children's Services; Alcohol Education &amp; Support; Safety &amp; Advocacy; Technology &amp; Account Safety; Financial, Housing &amp; Identity; Police &amp; Public Records; and Crisis &amp; Emergency. Search, filter by section, or show only Pueblo-listed classes, online, or free options.</p>
+<p>Each card shows the purpose, phone (tap to call), location, cost, format, limitations, a recommended next step, the source type, and when the link was last checked. Parenting-class details (prices, formats, and Pueblo County listing) come from the Colorado Judicial Branch provider directory. Retired entries are marked rather than removed. Resources can be browsed without unlocking the vault, and a spreadsheet of your own resources (saved as CSV) can be imported.</p>
+
+<h2>13. Protection &amp; Security</h2>
+<figure class="phone"><img src="screenshots/m08-protocol.png" alt="Protocol"><figcaption>Each step explains what, why, how, and the cautions</figcaption></figure>
+<p>Seven independent protocols: <b>A</b> Immediate Personal Safety, <b>B</b> Digital Account Security, <b>C</b> Phone and Computer Security, <b>D</b> Physical Surveillance and Vehicle Safety, <b>E</b> Residence and Personal Security, <b>F</b> Financial and Identity Protection, and <b>G</b> Legal and Evidence Organization. Each step shows what to do, why it matters, how to do it, safety or legal considerations, and supporting resources. Mark steps complete, record the date and private notes, and link related evidence. Progress is saved in the encrypted vault.</p>
+<div class="note">Before changing an account or device: preserve evidence first (screenshots, dates), consider whether the change will notify someone, and plan the timing with an advocate if safety is a concern. Never reset a device as a first step.</div>
+
+<h2>14. Court forms</h2>
+<figure class="phone"><img src="screenshots/m09-forms.png" alt="Court forms"><figcaption>Court forms grouped by situation</figcaption></figure>
+<p>Official Colorado Judicial Branch forms are grouped by situation: a new parental-responsibilities case, establishing parentage, changing parenting time, changing decision-making, enforcing an order, protection orders, fee waivers, serving papers, mediation, general filings, relocation, and (with a strong legal-review warning) residential evictions. Each group explains when it may apply and what it is not for. Instructions and forms are labeled separately, and proposed orders are marked as having no effect unless a judge signs them. Case Compass does not fill out or file forms and never creates documents that look court-issued.</p>
+
+<h2>15. Reports and exports</h2>
+<figure class="phone"><img src="screenshots/m10-reports.png" alt="Reports"><figcaption>Reports &amp; Export Center</figcaption></figure>
+<ol>
+<li><b>Choose a report:</b> chronological, monthly, attorney preparation packet, parenting-time record, evidence index, action checklists, selected categories, or blank printable forms.</li>
+<li><b>Choose records:</b> all records, one week, one month, a custom date range, or one record.</li>
+<li><b>Choose privacy options:</b> private notes are excluded unless you include them; children can be shown by name, by initials with details left out, or excluded.</li>
+<li><b>Create</b> a PDF (US Letter), Word (.docx), Excel (.xlsx with 12 sheets), CSV, or a print view for Print / Save as PDF.</li>
+</ol>
+<p>A preview lists the record IDs that will be included. Every report shows its date range, generation date, and record IDs, plus a notice that it is the author's own summary. <b>Exports are not encrypted</b>; the download window says so. On iPhone, choose Share › Save to Files. A complete case archive (.zip with reports and every original evidence file) is also available.</p>
+
+<h2>16. Backup, restore, and new devices</h2>
+<figure class="phone"><img src="screenshots/m11-backup.png" alt="Backup"><figcaption>Backup &amp; Restore</figcaption></figure>
+<p><b>Create encrypted backup</b> saves everything (records, Trash, version history, change log, settings, checklist progress, and attachments) into one encrypted <code>.ccbackup</code> file. You can protect it with your vault passphrase or a separate backup passphrase. Before you download it, Case Compass decrypts it again and checks every attachment's fingerprint.</p>
+<ul>
+<li>Keep at least one backup somewhere other than this device (Files/iCloud Drive, a USB drive, or a cloud folder only you control).</li>
+<li><b>Verify a backup</b> checks a file without changing your vault.</li>
+<li><b>Restore from backup</b> merges a backup into your vault without overwriting anything: if a record differs, the newer version becomes current and the other is kept in history. A restore point is made first.</li>
+<li><b>New device:</b> Case Compass does not sync. Copy the backup file to the new device and choose “Restore from an encrypted backup” on its welcome screen.</li>
+</ul>
+
+<h2>17. Importing earlier records</h2>
+<p><b>Reports › Import &amp; Migration</b> brings in records from an earlier family-law planner (JSON export or backup), from a spreadsheet saved as CSV, or from planner data stored in this browser at the same address. Every import shows a preview first, keeps every original field with the imported record, preserves original IDs and creation dates when present, skips anything already imported, and creates a restore point so it can be undone. Encrypted planner files ask for that planner's passphrase; if the format cannot be read, export it from the earlier planner as JSON.</p>
+
+<h2>18. Settings and data tools</h2>
+<ul>
+<li><b>Security:</b> auto-lock time, lock when hidden, Quick Exit destination, change passphrase.</li>
+<li><b>Reports:</b> the “Prepared by” name and matter description shown on reports.</li>
+<li><b>Appearance:</b> dark (default), light, or match device; default time zone (Mountain Time).</li>
+<li><b>Storage:</b> how much space is used and whether the browser will keep data persistently.</li>
+<li><b>Trash:</b> deleted records can be restored or permanently deleted.</li>
+<li><b>Restore points:</b> roll back after an import or restore.</li>
+<li><b>Drafts and data health:</b> discard old drafts; see whether any stored item could not be read.</li>
+<li><b>Delete vault:</b> permanently erases everything in this browser (requires your passphrase).</li>
+</ul>
+
+<h2>19. Troubleshooting</h2>
+<table>
+<tr><th>Message or problem</th><th>What to do</th></tr>
+<tr><td>“Open Case Compass from a web address”</td><td>The file was opened directly from a folder. Use the HTTPS address or <code>http://localhost:8080</code>.</td></tr>
+<tr><td>“Secure storage is not available” / “Storage is blocked”</td><td>Usually private browsing or a privacy setting. Use a normal window. Records are never stored without encryption.</td></tr>
+<tr><td>“Storage is full”</td><td>Make a backup, then remove large files you no longer need. Your text is kept as a draft.</td></tr>
+<tr><td>A report did not open in a new window</td><td>Pop-ups were blocked; the print view is downloaded instead. Open it and print.</td></tr>
+<tr><td>“An updated version is ready”</td><td>Choose Update now when you are not in the middle of typing.</td></tr>
+<tr><td>Forgot passphrase</td><td>It cannot be recovered. If you have a backup and remember its passphrase, erase the vault from the lock screen and restore the backup.</td></tr>
+</table>
+
+<h2>20. Legal notice</h2>
+<p>Case Compass is an organizational and educational tool. It does not provide legal advice, create an attorney-client relationship, guarantee any outcome, or replace legal representation. Resource information was compiled from official and provider sources in November 2026; services, prices, hours, and forms change, so confirm before relying on them. No security measure is absolute. In an emergency, call 911. For confidential domestic violence support in Pueblo, call Mariposa Center for Safety at 719-545-8195 (24 hours). For a mental health crisis, call or text 988.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,183 @@
+{
+  "run": "2026-11-13T17:33:59.397Z",
+  "base": "http://127.0.0.1:8080/",
+  "passed": 25,
+  "failed": 0,
+  "results": [
+    {
+      "id": 1,
+      "name": "First launch on an empty installation",
+      "status": "passed",
+      "ms": 56,
+      "detail": "welcome screen shown; no vault, no records"
+    },
+    {
+      "id": 2,
+      "name": "Vault creation and unlock",
+      "status": "passed",
+      "ms": 515,
+      "detail": "PBKDF2-SHA256 600000 iterations, wrapped AES-256 key"
+    },
+    {
+      "id": 3,
+      "name": "Incorrect passphrase handling",
+      "status": "passed",
+      "ms": 1453,
+      "detail": "clear error shown, vault stayed locked, correct passphrase then unlocked"
+    },
+    {
+      "id": 4,
+      "name": "Create, edit, and reopen every record type",
+      "status": "passed",
+      "ms": 27180,
+      "detail": "11 record types created and reopened; edit kept version 1 in history"
+    },
+    {
+      "id": 5,
+      "name": "Upload and retrieve evidence attachments",
+      "status": "passed",
+      "ms": 1188,
+      "detail": "SHA-256 c414cd0e204de974… verified after storage, preview, and download"
+    },
+    {
+      "id": 6,
+      "name": "Link evidence to more than one record",
+      "status": "passed",
+      "ms": 3625,
+      "detail": "linked to INC-0001 and COM-0001; file stored once"
+    },
+    {
+      "id": 7,
+      "name": "Search and filter records",
+      "status": "passed",
+      "ms": 787,
+      "detail": "keyword, type, evidence status, and date-range filters return the expected records"
+    },
+    {
+      "id": 8,
+      "name": "Complete checklist items and preserve progress",
+      "status": "passed",
+      "ms": 2508,
+      "detail": "B1 completion, date, and notes persisted across reload (encrypted)"
+    },
+    {
+      "id": 9,
+      "name": "Create and update calendar events",
+      "status": "passed",
+      "ms": 2296,
+      "detail": "task created on calendar day, then marked Done with completion date"
+    },
+    {
+      "id": 10,
+      "name": "Export actual Word documents",
+      "status": "passed",
+      "ms": 1824,
+      "detail": "opened by python-docx (18 tables) and LibreOffice; record IDs and text match; private notes excluded"
+    },
+    {
+      "id": 11,
+      "name": "Export actual Excel workbooks",
+      "status": "passed",
+      "ms": 1773,
+      "detail": "12 sheets with frozen, filterable headers; Incidents row matches source (INC-0001, 2026-10-17); opens in LibreOffice"
+    },
+    {
+      "id": 12,
+      "name": "Print and save a PDF",
+      "status": "passed",
+      "ms": 601,
+      "detail": "native PDF: 7 US Letter pages with page numbers; browser print view saved as 6-page PDF"
+    },
+    {
+      "id": 13,
+      "name": "Export an encrypted backup",
+      "status": "passed",
+      "ms": 1328,
+      "detail": "19.3 KB, AES-256-GCM, verified before download; no plaintext found"
+    },
+    {
+      "id": 14,
+      "name": "Restore the backup in a clean environment",
+      "status": "passed",
+      "ms": 2437,
+      "detail": "13 records, attachment hash, and checklist progress identical in a fresh browser profile"
+    },
+    {
+      "id": 15,
+      "name": "Migrate an older planner backup",
+      "status": "passed",
+      "ms": 886,
+      "detail": "4 legacy entries imported (original id INC-0042, dates, and raw data kept); re-import detected as duplicates"
+    },
+    {
+      "id": 16,
+      "name": "Recover from interrupted edits",
+      "status": "passed",
+      "ms": 3439,
+      "detail": "encrypted draft restored after reload; leaving with unsaved text asks first"
+    },
+    {
+      "id": 17,
+      "name": "Handle unavailable storage or encryption",
+      "status": "passed",
+      "ms": 3760,
+      "detail": "missing Web Crypto, plain-HTTP non-local address, blocked IndexedDB, and file:// each show an explanation (never a plaintext fallback)"
+    },
+    {
+      "id": 18,
+      "name": "Open on a small iPhone screen",
+      "status": "passed",
+      "ms": 4011,
+      "detail": "iPhone SE (375×667): 9 screens without horizontal overflow; bottom navigation with ≥44px targets"
+    },
+    {
+      "id": 19,
+      "name": "Open on desktop",
+      "status": "passed",
+      "ms": 373,
+      "detail": "sidebar navigation shown; bottom bar hidden; no overflow at 1440px"
+    },
+    {
+      "id": 20,
+      "name": "Work offline after initial installation",
+      "status": "passed",
+      "ms": 4280,
+      "detail": "reloaded with network disabled; unlocked, browsed, and saved a record offline"
+    },
+    {
+      "id": 21,
+      "name": "Open every internal navigation destination",
+      "status": "passed",
+      "ms": 25711,
+      "detail": "72 internal destinations rendered with a heading and no error"
+    },
+    {
+      "id": 22,
+      "name": "Detect missing local resources",
+      "status": "passed",
+      "ms": 1192,
+      "detail": "all bundled files found; a simulated missing file is reported by name"
+    },
+    {
+      "id": 23,
+      "name": "Display clear errors instead of blank screens",
+      "status": "passed",
+      "ms": 15747,
+      "detail": "missing record and failed app file both produce readable messages"
+    },
+    {
+      "id": 24,
+      "name": "Correct behavior with no sample data",
+      "status": "passed",
+      "ms": 359,
+      "detail": "0 records; empty states shown"
+    },
+    {
+      "id": 25,
+      "name": "Sensitive data is not transmitted externally",
+      "status": "passed",
+      "ms": 0,
+      "detail": "61 requests observed across all tests, all same-origin; CSP connect-src 'self' blocks outbound connections"
+    }
+  ]
+}
